@@ -11,7 +11,6 @@ namespace Avaliação.Util
         private static string user = "root";
         private static string password = "tkl@2018";
         private string connectionString = $"Server={server};Database={database};Uid={user};Pwd={password}";
-
         private MySqlConnection connection;
 
         public DAL()
