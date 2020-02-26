@@ -1,0 +1,280 @@
+﻿
+@{
+    ViewData["Title"] = "IndexSaida";
+}
+
+<h3>Relátorio de Cadastro de Avaliação</h3>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+
+<html lang="en" id="teste">
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table id="minhaTabela" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            Data da Avaliação
+                        </td>
+                        <td>
+                            Avaliador
+                        </td>
+                        <td>
+                            Avaliado
+                        </td>
+                        <td>
+                            Compromisso com a Segurança
+                        </td>
+                        <td>
+                            Compromisso com a Qualidade
+                        </td>
+                        <td>
+                            Compromisso com Resultado
+                        </td>
+                        <td>
+                            Espírito Empreendedor
+                        </td>
+                        <td>
+                            Visão Estratégica
+                        </td>
+                        <td>
+                            Disciplina
+                        </td>
+                        <td>
+                            Foco no Cliente (int.|ext.)
+                        </td>
+                        <td>
+                            Tomada de decisões
+                        </td>
+                        <td>
+                            Desenvolvimento de Pessoas
+                        </td>
+                        <td>
+                            Comunicação
+                        </td>
+                        <td>
+                            Trabalho em Equipe
+                        </td>
+                        <td>
+                            Inteligência Emocional
+                        </td>
+                        <td>
+                            Relacionamento Interpessoal
+                        </td>
+                        <td>
+                            Iniciativa
+                        </td>
+                        <td>
+                            Planejamento
+                        </td>
+                        <td>
+                            Melhoria Contínua
+                        </td>
+                        <td>
+                            Solução de Problema
+                        </td>
+                        <td>
+                            Inovação
+                        </td>
+                        <td>
+                            Visão do Negócio
+                        </td>
+                        <td>
+                            Conhecimento Técnico
+                        </td>
+                        <td>
+                            Inovação
+                        </td>
+                        <td>
+                            Atração de Novo Cliente
+                        </td>
+                        <td>
+                            Preparar 01 Sucessor
+                        </td>
+                        <td>
+                            Projeto de Inovação
+                        </td>
+                        <td>
+                            Preparar 01 Sucessor
+                        </td>
+                        <td>
+                            Job Rotation
+                        </td>
+                        <td>
+                            Kaizen Financeiro
+                        </td>
+                        <td>
+                            Ação de Auto-desenvolvimento
+                        </td>
+                        <td>
+                            Projeto de Melhoria em mais de 01 unidade ou área
+                        </td>
+                        <td>
+                            Carro Proprio
+                        </td>
+                        <td>
+                            CNH
+                        </td>
+                        <td>
+                            Superior Completo
+                        </td>
+                        <td>
+                            Pós Graduação ou MBA
+                        </td>
+                        <td>
+                            Inglês japones Intermediário
+                        </td>
+                        <td>
+                            Excel Intermediário
+                        </td>
+                        <td>
+                            Inglês Básico
+                        </td>
+                        <td>
+                            Excel Básico
+                        </td>
+                        <td>
+                            Excel Avançado
+                        </td>
+                        <td>
+                            Operador de Empilhadeira
+                        </td>
+                        <td>
+                            Superior Cursando
+                        </td>
+                        <td>
+                            Conhecimento Pacote Office
+                        </td>
+                        <td>
+                            Pacote Office Baásico
+                        </td>
+                        <td>
+                            Credenciamento da Atividade
+                        </td>
+                        <td>
+                            Ensino Médio Completo
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        foreach (var item in (List<CompetenciaModel>)ViewBag.ListaCadastro)
+                        {
+
+                                        <tr>
+                                            <td>@item.Data.ToString()</td>
+                                            <td>@item.NomeGestor.ToString()</td>
+                                            <td>@item.Nome.ToString()</td>
+             
+                                            <td>@item.Negocios01.ToString()</td>
+                                            <td>@item.Negocios02.ToString()</td>
+                                            <td>@item.Negocios03.ToString()</td>
+                                            <td>@item.Negocios04.ToString()</td>
+                                            <td>@item.Negocios05.ToString()</td>
+                                            <td>@item.Negocios06.ToString()</td>
+                                            <td>@item.Negocios07.ToString()</td>
+                                            <td>@item.Pessoas14.ToString()</td>
+                                            <td>@item.Pessoas15.ToString()</td>
+                                            <td>@item.Pessoas16.ToString()</td>
+                                            <td>@item.Pessoas17.ToString()</td>
+                                            <td>@item.Pessoas18.ToString()</td>
+                                            <td>@item.Pessoas19.ToString()</td>
+                                            <td>@item.Pessoas20.ToString()</td>
+                                            <td>@item.Processos08.ToString()</td>
+                                            <td>@item.Processos09.ToString()</td>
+                                            <td>@item.Processos10.ToString()</td>
+                                            <td>@item.Processos11.ToString()</td>
+                                            <td>@item.Processos12.ToString()</td>
+                                            <td>@item.Processos13.ToString()</td>
+                                            <td>@item.Nivel_Estrategico_01.ToString()</td>
+                                            <td>@item.Nivel_Estrategico_02.ToString()</td>
+                                            <td>@item.Nivel_Estrategico_03.ToString()</td>
+                                            <td>@item.Nivel_Tatico_01.ToString()</td>
+                                            <td>@item.Nivel_Tatico_02.ToString()</td>
+                                            <td>@item.Nivel_Tatico_03.ToString()</td>
+                                            <td>@item.Nivel_Execucao_01.ToString()</td>
+                                            <td>@item.Nivel_Execucao_02.ToString()</td>
+                                            <td>@item.Nivel_Execucao_03.ToString()</td>
+                                            <td>@item.Carro_proprio.ToString()</td>
+                                            <td>@item.CNH.ToString()</td>
+                                            <td>@item.Superior_completo.ToString()</td>
+                                            <td>@item.Pos_graduacao_MBA.ToString()</td>
+                                            <td>@item.Ingles_japones_intermediario.ToString()</td>
+                                            <td>@item.Excel_intermediario.ToString()</td>
+                                            <td>@item.Ingles_basico.ToString()</td>
+                                            <td>@item.Excel_basico.ToString()</td>
+                                            <td>@item.Excel_Avancado.ToString()</td>
+                                            <td>@item.Operador_de_Empilhadeira.ToString()</td>
+                                            <td>@item.Superior_cursando.ToString()</td>
+                                            <td>@item.Conhecimento_Pacote_Office.ToString()</td>
+                                            <td>@item.Pacote_Office_basico.ToString()</td>
+                                            <td>@item.Credenciamento_da_atividade.ToString()</td>
+                                            <td>@item.Ensino_medio_completo.ToString()</td>
+
+
+
+                                        </tr>
+
+                                      
+
+                        }
+
+                    }
+            </table>
+        </div>
+    </form>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $('#minhaTabela').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'excel',
+                        text: 'Excel',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'csv',
+                        text: 'CSV',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    }]
+                });
+
+            });
+
+
+        </script>
+
+
+    </body>
+</html>
+    }
+
+
+
+

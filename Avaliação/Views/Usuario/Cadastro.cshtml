@@ -1,0 +1,109 @@
+﻿@model UsuarioModel
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+@{
+    Layout = "../Shared/_LayoutAlterarSenha.cshtml";
+}
+
+<br>
+
+@{
+    var vMatricula = "";
+    var vCPF = "";
+    var vNome = "";
+    var vCargo = "";
+    var vCategoria = "";
+    var vNivel = "";
+    var vUnidade = "";
+    var vGestor = "";
+    var vPerfil = "";
+    var vId = 0;
+
+    try
+    {
+        vId = int.Parse(@ViewBag.Registro.Id.ToString());
+        vMatricula = @ViewBag.Registro.Matricula.ToString();
+        vCPF = @ViewBag.Registro.CPF.ToString();
+        vNome = @ViewBag.Registro.Nome.ToString();
+        vCargo = @ViewBag.Registro.Cargo.ToString();
+        vCategoria = @ViewBag.Registro.Categoria.ToString();
+        vNivel = @ViewBag.Registro.Nivel.ToString();
+        vUnidade = @ViewBag.Registro.Unidade.ToString();
+        vGestor = @ViewBag.Registro.Gestor.ToString();
+        vPerfil = @ViewBag.Registro.Perfil.ToString();
+
+    }
+    catch { }
+}
+<br>
+<br>
+<br>
+
+@{
+    try
+    {
+        if (TempData["MensagemLoginInvalido"].ToString() != null)
+        {
+            <div class="alert alert-danger">
+                <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+            </div>
+
+        }
+    }
+    catch
+    {
+
+    }
+
+}
+<h2 style="text-align:center">Atualizar Cadastro</h2>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<div class="container" style="background-color:silver; border-radius: 10px; padding:20px; width:300px;">
+    <body>
+        <form asp-controller="Usuario" asp-action="UpdateEditar" class="form-box">
+
+            <div>
+                <div> <label>Matricula</label> </div>
+                <input type="text" asp-for="Matricula" value="@vMatricula" id="txtmatricula" name="txtmatricula" class=" form-control">
+                <div><label>CPF</label></div>
+                <input type="text" asp-for="CPF" value="@vCPF" id="txtCPF" name="txtCPF" class="form-control ">
+                <div><label>Nome</label></div>
+                <input type="text" asp-for="Nome" value="@vNome" id="txtNome" name="txtNome" class="form-control ">
+                <div><label>Cargo</label></div>
+                <input type="text" asp-for="Cargo" value="@vCargo" id="txtCargo" name="txtCargo" class="form-control ">
+                <div><label>Categoria</label></div>
+                <input type="text" asp-for="Categoria" value="@vCategoria"txtCategoria" name="txtCategoria" class="form-control ">
+                <div><label>Nivel</label></div>
+                <input type="text" asp-for="Nivel" value="@vNivel" id="txtNivel" name="txtNivel" class="form-control ">
+                <div><label>Unidade</label></div>
+                <input type="text" asp-for="Unidade" value="@vUnidade" id="txtCargo" name="txtCargo" class="form-control ">
+                <div><label>Gestor</label></div>
+                <input type="text" asp-for="Gestor" value="@vGestor" id="txtGestor" name="txtGestor" class=" form-control">
+                <div><label>Perfil</label></div>
+                <input type="text" asp-for="Perfil" value="@vPerfil" id="txtGestor" name="txtGestor" class=" form-control">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">ATUALIZAR</button>
+            <td><button type="button" class="btn btn-danger" onclick="Excluir(@vId)">Excluir</button></td>
+            <button type="button" class="btn btn-primary" onclick="javascript:window.location.href='/RecursosHumanos/RelatorioUsuario'">VOLTAR</button>
+            <div>
+
+            </div>
+
+        </form>
+
+    </body>
+</html>
+<script>
+ 
+    function Excluir(id) {
+        window.location.href = "/Usuario/Excluir/" + id;
+    }
+   
+</script>

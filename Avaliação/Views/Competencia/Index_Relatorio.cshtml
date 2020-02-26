@@ -1,0 +1,55 @@
+﻿@model CompetenciaModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "../Shared/_LayoutAvaliar.cshtml";
+}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container" style="background-color:rgba(239, 239, 239, 0.99); border-radius: 10px; padding:20px; width:300px;">
+    @{
+        try
+        {
+            if (TempData["MensagemLoginInvalido"].ToString() != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+                </div>
+            }
+        }
+        catch { }
+    }
+
+
+
+
+    <form asp-controller="Competencia" asp-action="Relatorio">
+
+
+
+        <div class="form-group">
+            <label for="pwd">Nome do Gestor:</label>
+            <input type="text" id="TxtNome" name="TxtNome" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioLogado")">
+        </div>
+      
+        <div class="checkbox">
+            <label style="font-size:150%;background-color:gainsboro;color:red"><b>Relatorio Geral<b /></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Pesquisar</button>
+
+
+    </form>
+
+

@@ -1,0 +1,2301 @@
+﻿@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+<br>
+<br>
+<h5>Bem Vindo !<br> Você está avaliando PerFil Gestor do colaborador : @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</h5><link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+<br>
+<br>
+<html lang="en" id="teste">
+
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table id="minhaTabela" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+
+                        <td>
+                            <b> COMPROMISSO COM A SEGURANÇA</b>
+                        </td>
+                        <td>
+                            <b> Cuidar da sua própria segurança e da segurança do outro, propagando as normas e procedimentos de segurança do trabalho, sendo exemplo. Fazer uso dos EPI´s corretamente e adotar o conceito de EIJI TOYODA: "O trabalho seguro é a porta para todos os trabalhos. Vamos atravessar essa porta."</b>
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    <b> 1</b>
+                                </td>
+
+                                <td>
+                                    <b>   Teve grande dificuldade para cumprir as normas de segurança. Não seguiu os procedimentos, podendo causar incidentes e/ou acidentes.</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>  2</b>
+                                </td>
+
+                                <td>
+                                    <b>  Demonstrou com frequencia atitudes seguras. Respeitou e cumpriu as normas e regras de segurança e por vezes contribuiu na disseminação dos procedimentos.</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>  3</b>
+                                </td>
+
+                                <td>
+                                    <b>  Cumpriu as normas e procedimentos de segurança, além de propagar a segurança para outros. Mostrou interesse em participar das atividades relacionadas a área de segurança, apoiando as campanhas internas.</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <b>   4</b>
+                                </td>
+
+                                <td>
+                                    <b>  Influenciou rigorosamente o cumprimento nas normas de segurança em sua unidade e demais áreas que mantém relacionamento. Foi exigente com a falta de segurança a ponto de oferecer soluções imediatas para uma situação de risco. É facilitador  nos treinamentos internos relacionados a área de segurança.</b>
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+
+
+            @section Scripts {
+                <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+                <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+                <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+                <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+                <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+                <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+                <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+                <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+                <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+                <script>
+
+                    $(document).ready(function () {
+                        $('#minhaTabela').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela02').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela03').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela04').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela05').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela06').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela07').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela08').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela09').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela10').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela11').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela12').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela13').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela14').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela15').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela16').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela17').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela18').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela19').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela20').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+                    $(document).ready(function () {
+                        $('#minhaTabela2').DataTable({
+                            dom: 'Bfrtip',
+                            buttons: [{
+                                extend: 'excel',
+                                text: 'Excel',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'csv',
+                                text: 'CSV',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            },
+                            {
+                                extend: 'pdf',
+                                text: 'PDF',
+                                className: 'exportExcel',
+                                filename: 'Historico_Saida_CESPE',
+                                exportOptions: { modifier: { page: 'all' } }
+                            }]
+                        });
+
+                    });
+
+
+                </script>
+            </div>
+        </form>
+    </body>
+</html>
+
+
+<body>
+    <form id="form2" runat="server">
+        <div>
+            <table id="minhaTabela2" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            COMPROMISSO COM A QUALIDADE
+
+                        </td>
+                        <td>
+                            Assume o compromisso com a qualidade dos serviços prestados, executando suas atividades com excelência, exatidão e sem incidencia de erros, evitando retrabalho e desperdícios.
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou grande dificuldade em realizar as atividades corretamente, necessitando de constante orientação.
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Realizou atividades de acordo com os procedimentos, porém necessitou de revisão e correções pontuais.
+                                    ação dos procedimentos.
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Entregou trabalhos de forma excelente, sem erros com alto grau de qualidade.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Influenciou rigorosamente o cumprimento nas normas de segurança em sua unidade e demais áreas que mantém relacionamento. Foi exigente com a falta de segurança a ponto de oferecer soluções imediatas para uma situação de risco. É facilitador  nos treinamentos internos relacionados a área de segurança.
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form03" runat="server">
+        <div>
+            <table id="minhaTabela03" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            COMPROMISSO COM O RESULTADO
+
+
+                        </td>
+                        <td>
+                            Atinge os objetivos e metas estabelecidas, demonstra energia para assumir novos desafios e trabalha ativamente para melhorar a si mesmo. Em momentos de pressão, é persistente, sabendo priorizar, otimizar e alocar os recursos adequadamente dentro dos prazos e orçamentos previstos.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Entregou os resultados abaixo do esperado e apresentou dificuldade em priorizar corretamente suas ações / atividades. Necessitou de orientação e/ou supervisão constante para atendimento ao prazo e orçamento.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Entregou os resultados acordados, dentro dos prazos e orçamentos estabelecidos.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Entregou resultados acima do esperado, respeitando ou superando os prazos, otimizando recursos e orçamento.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Atingiu resultados excepcionais em relação aos prazos, orçamentos e metas, superando grandes obstáculos e adversidades. Agregou valor ao negócio ao direcionar ou redirecionar outras pessoas e áreas no desempenho de suas atividades.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form04" runat="server">
+        <div>
+            <table id="minhaTabela04" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            VISÃO ESTRATÉGICA
+
+
+                        </td>
+                        <td>
+                            Conhece as práticas atuais e tendências futuras de mercado que impactam o sucesso do negócio. Tem visão clara e senso de direção para propor planos estratégicos, visando o alcance de objetivos para a empresa. Transpõe grandes obstáculos, exigindo articulações com inteligência, além de prever e controlar problemas estruturais, organizacionais e operacionais.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Demonstrou grande dificuldade de antever os problemas e evitá-los, agindo de forma reativa.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Desenvolveu e implementou parcialmente planos de ação para a sua área, porém não teve acompanhamento efetivo das ações.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Firmou alianças estratégicas com stakeholders, transpondo obstáculos. Foi capaz de ler cenários (interno e externo), prevendo riscos organizacionais e adequando rapidamente as ações da área aos objetivos da organização.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Atuou como consultor, orientando pares e superiores na definição de planos para o alcance dos objetivos da organização. Influenciou fortemente a implantação de novas práticas, além de disseminar a visão e missão da TKL. Contribuiu para o fortalecimento da marca frente aos stakeholders, elevando o nível da organização.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form05" runat="server">
+        <div>
+            <table id="minhaTabela05" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            ESPÍRITO EMPREENDEDOR
+
+
+                        </td>
+                        <td>
+                            Ser arrojado, ativo, aceitar desafios, identificar e implantar novas ideias. Mostrar-se atento ao cenário interno e externo. Facilitar, estimular e implantar mudanças desejadas. Estabelece as alianças necessárias.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou grande dificuldades em desenvolver e implantar novas ideias ou mudanças necessárias para atingir os desafios que foram propostos.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Conseguiu implementar parcialmente as mudanças necessárias e teve receio em aceitar novos desafios. Necessitou de apoio e orientação constante do superior.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Atentou-se ao cenário interno e externo, por isso foi capaz de propor e implementar mudanças arrojadas em sua área com uma análise correta dos impactos e riscos para a empresa.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Foi capaz de perceber o cenário interno e externo, analisar os riscos e impactos, agindo de forma arrojada na proposta e implementação de novas ideias. Realizou mudanças em sua área, influenciando as demais áreas no atingimento de resultados ambiciosos.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form06" runat="server">
+        <div>
+            <table id="minhaTabela06" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            DISCIPLINA
+
+
+                        </td>
+                        <td>
+                            Conhece, respeita e adota como prática as regras, normas da empresa, regulamentos e procedimentos. Demonstra comprometimento com a liderança, sendo pontual, evitando faltar ao trabalho sem necessidade e contribuindo com a realização de horas extras, quando necessário.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Não cumpriu as regras da empresa, não demonstrou comprometimento em realizar horas extras e apresentou faltas sem justificativas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Cumpriu parcialmente as políticas e regras da empresa e mesmo discordando, atendeu as orientações recebidas do seu superior. Apresentou algumas ausências, porém reportou ao gestor imediato.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Antecipou as faltas possíveis, apresentando alternativas para compensação (troca de horários e/ou realização de horas extras). Cumpriu os regulamentos e procedimentos da empresa, sem orientação do seu superior.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Cumpriu as políticas e regras da empresa, sugerindo melhorias de acordo com sua função. Apresentou raros atrasos ao longo do período e grande participação em horas extras,  sendo considerado pela equipe, exemplo de pontualidade, demonstrando alto grau de comprometimento com a empresa.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form07" runat="server">
+        <div>
+            <table id="minhaTabela07" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            FOCO NO CLIENTE (INTERNO/ EXTERNO)
+
+
+                        </td>
+                        <td>
+                            Entende e propõe soluções que atendem as expectativas dos clientes internos e externos com agilidade, assertividade e atendimento personalizado.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou grande dificuldade para identificar as necessidades dos clientes internos e externos, sendo impossível a proposta de soluções.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Atendeu parcialmente as expectativas dos clientes, necessitando de ajuda para apresentação de soluções assertivas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Reconheceu as necessidades dos clientes e soube adaptar recursos, produtos, serviços e/ou operações alcançando a satisfação dos clientes.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Superou a expectativa dos clientes ao desenvolver soluções personalizadas de forma assertiva e ágil. Realizou ações para estimular outras pessoas nessa direção.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form08" runat="server">
+        <div>
+            <table id="minhaTabela08" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            TOMADA DE DECISÃO
+
+
+                        </td>
+                        <td>
+                            Capacidade de agir com rapidez e flexibilidade. Organiza, analisa, avalia e identifica os riscos e o impacto para a empresa. Assume responsabilidade em situações incertas, adversas e ambiguas.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Teve grande dificuldade para tomar decisões de forma assertiva. Não analisou os dados de forma correta e deixou de considerar os riscos.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Apresentou dificuldades para tomar decisões e buscar soluções. Algumas vezes, não considerou os riscos e informações necessárias em sua totalidade. Necessitou de auxílio para análise de dados e não demonstrou confiança em si mesmo.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Tomou boas decisões, analisando as informações e identificando os possíveis riscos para a empresa. Assumiu responsabilidades em situações de alto impacto, demonstrando confiança em si mesmo.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Tomou decisões, apresentando resultados satisfatórios para a empresa. Avaliou de forma assertiva os impactos, definiu indicadores para monitorar os processos e identificou problemas, oferecendo soluções adequadas.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form09" runat="server">
+        <div>
+            <table id="minhaTabela09" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            DESENVOLVIMENTO DE PESSOAS
+
+
+                        </td>
+                        <td>
+                            Contribuir para o desenvolvimento, capacitação e treinamento da equipe. Ser um facilitador para a integração e a disseminação da cultura organizacional, promovendo "feedbacks" periódicos necessários ao crescimento da equipe. Identifica potenciais, apoia o seu desenvolvimento e indica para o Programa de sucessores.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Teve grande dificuldade para acompanhar sua equipe de trabalho e identificar potenciais. Os "feedbacks" periódicos não foram realizados e apenas algumas ações focadas no desenvolvimento de seus subordinados foram cumpridas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Apresentou dificuldade para identificar as necessidades de capacitação e treinamento da equipe. Apresentou algumas ações para o crescimento da equipe, forneceu e recebeu feedbacks de forma adequada, porém não conseguiu identificar futuros potenciais.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Despertou o comprometimento da equipe e estimulou o auto-desenvolvimento. Acompanhou a integração da equipe e introduziu os conceitos relacionados a cultura TK. Aplicou feedbacks periodicos e acompanhou a evolução dos colaboradores, identificando potenciais e apoiando o desenvolvimento.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Influencia o auto-desenvolvimento, fornece ferramentas de capacitação e treinamento. Mantem a cultura TK viva no setor, aplica feedbacks periódicos motivando seus colaboradores a mudança efetiva em seus comportamentos. É referência  dos colaboradores dentro e fora da sua área de atuação, fortalecendo o programa de sucessores.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form10" runat="server">
+        <div>
+            <table id="minhaTabela10" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            COMUNICAÇÃO
+
+
+                        </td>
+                        <td>
+                            Transmite com exatidão informações e ideias de maneira rápida, objetiva, clara e transparente. Apresenta objetividade quando fala e escreve, certificando que a outra parte compreendeu a informação.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou dificuldades de comunicação, expressando-se de forma pouco clara e objetiva. Frequentemente recebeu orientação para utilizar a objetividade em comunicação oral e escrita.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Transmitiu suas ideias, opiniões e informações de forma objetiva, porém, sem se preocupar em checar o entendimento do receptor, o que gerou algum retrabalho.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Emitiu e recebeu informações de forma adequada, proporcionando no outro o sentimento de ter sido ouvido e entendido, o que agilizou o processo de comunicação.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Demonstrou comunicação clara e assertiva, agilizando a transmissão de mensagens aos colegas. Atuou como facilitador em conversações, em razão do seu bom grau de compreensão e transmissão de ideias. Constantemente se preocupou para que a mensagem fosse transmitida da melhor forma.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form11" runat="server">
+        <div>
+            <table id="minhaTabela11" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            TRABALHO EM EQUIPE
+
+
+                        </td>
+                        <td>
+                            Exerce o trabalho em conjunto, buscando o objetivo comum, valoriza a sua contribuição e dos demais membros da equipe, além da troca de conhecimento para a solução dos problemas.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Possui grande dificuldade em colaborar com o gupo, não entendendo a importância do apoio aos demais membros da equipe.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Indica comportamentos de colaboração com a equipe somente quando é solicitado, falta pro atividade e proximidade com os membros da equipe.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Colabora com todos da empresa, independente da posição hierárquica, está sempre disposto a ajudar a equipe de forma ativa e motivadora, possui flexibilidade e respeito as diferenças individuais.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Possui grande habilidade de inserção em diversos grupos, se relaciona com todos da equipe promovendo a confiança, igualdade e reforçando a importância de cada um na busca dos resultados.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form12" runat="server">
+        <div>
+            <table id="minhaTabela12" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            INTELIGÊNCIA EMOCIONAL
+
+
+                        </td>
+                        <td>
+                            Sabe identificar e lidar com às suas próprias emoções, possui auto controle das atitudes emocionais, se comportando de forma assertiva, para a construção de relacionamentos saudáveis.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Recebe as informações de forma pessimista, expressando sentimentos de forma áspera, sem se preocupar com os sentimentos dos outros. Possui dificuldade em se colocar no lugar do outro, e se apresenta na maioria das situações de forma negativa.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Diante das situações de conflito procura controlar as emoções, porém falta conhecimento interno e controle emocional, pois acaba deixando transparecer suas irritações e falta habilidade em resolver os problemas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Respeita e compreende as emoções e os limites das pessoas, reconhece e é verdadeiro com os seus sentimentos e emoções, respeitando seus limites, e das outras pessoas. Cria soluções e não paralisa mediante as dificuldades do dia a dia, busca soluções de forma rápida e simples.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Tem uma visão positiva e otimista em relação aos acontecimentos, cultiva a motivação interna e não depende somente dos fatores externos para ser manter motivado, possui controle emocional, calma em situações de pressão, sabe ouvir feedbacks e usá-los de forma construtiva.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form13" runat="server">
+        <div>
+            <table id="minhaTabela13" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            RELACIONAMENTO INTERPESSOAL
+
+
+                        </td>
+                        <td>
+                            Mantém relacionamento com todos os níveis hierárquicos, além de parceiros, clientes e fornecedores. Identifica as necessidades, firmando alianças para a solução de problemas e tomada de decisão.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Revela falta de habilidade em lidar com as pessoas, priorizando os seus próprios pensamentos e sentimentos. Mantém-se distante de pessoas e informações, dificultando a solução de problemas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Interage de forma construtiva com os diferentes grupos, demonstra facilidade em lidar com as pessoas, porém em algumas situações acaba agindo com a emoção, dificultando as relações pessoais.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Possui facilidade em se relacionar com as pessoas ao seu redor de forma positiva e honesta, facilitando a convivência no grupo. Auxilia na solução dos conflitos internos devido a sua grande influência na equipe, o diálogo é verdadeiro e objetivo.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    É constante em suas atitudes, harmonioso e motivador, sabe entender as pessoas de forma verdadeira. É persuasivo e sua comunicação é assertiva, inspirando as pessoas por suas atitudes e respeito ao ser humano. Auxilia na solução dos problemas de forma justa  e mediadora.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form14" runat="server">
+        <div>
+            <table id="minhaTabela14" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            INICIATIVA
+
+
+                        </td>
+                        <td>
+                            Apresenta proatividade no dia a dia, estando disposto a dar o primeiro passo em todos os desafios. Demonstra senso de urgência, analisando possíveis impactos, sendo ágil na solução de problemas e tomada de decisão.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Percebe os desafios, porém encara como obstáculo. É reativo às mudanças e aguarda orientação de outras pessoas para agir.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Sabe a importância de resolver as situações, porém acaba procrastinando algumas tarefas, gerando desconforto na equipe, acumulo de tarefas e atraso nas entregas.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Assume responsabilidade, parte para a ação, corre riscos e possui forte senso de urgência. Se compromete em resolver os problemas aos invés de criá-los.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Busca naturalmente novos desafios, é criativo na solução dos problemas. Assume a responsabilidade para si, despertando nas pessoas confiança e entusiasmo. Compreende as transformações do ambiente, desenvolvendo novas atitudes que possam contribuir para o seu crescimento e evolução na empresa.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form15" runat="server">
+        <div>
+            <table id="minhaTabela15" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            PLANEJAMENTO
+
+
+                        </td>
+                        <td>
+                            Capacidade para planejar e organizar as atividades, nas diferentes fases de evolução de uma tarefa, determinando objetivos, procedimentos, prioridades, prazos e utilização adequada de recursos para o atingimento das metas e resultados.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Revela dificuldade com a organização em geral, tem consicência da importância de se planejar e cumprir com os prazos estabelecidos, porém apresenta dificuldade na gestão do tempo, o que impacta no cumprimento das atividades.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Planeja e determina as ações antecipadamente com objetivos claros e definidos. Atua com organização, delega as atividades, porém falta percepção do que é prioridade.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Apresenta facilidade para definir métodos e processos organizados para alcançar os objetivos do negócio. Auxilia a equipe de forma efetiva a realizar o que foi planejado oferecendo suporte e recursos para o desenvolvimento das atividades.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Apresenta conhecimento do negócio, avalia às novas tendências de mercado, tem visão crítica para a construção do planejamento, considerando as prioridades, objetivos, procedimentos e recursos para o cumprimento dos prazos estabelecidos.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form16" runat="server">
+        <div>
+            <table id="minhaTabela16" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            MELHORIA CONTÍNUA
+
+
+                        </td>
+                        <td>
+                            Capacidade de entender os processos internos e melhorar continuamente, considerando o ganho de produtividade, redução de custos e excelencia nos processos, aplicando PDCA e KAIZEN.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Conhece a metodologia PDCA e KAIZEN, mas ainda não realizou recomendações e melhorias, fase de aprendizado.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Aplicou com certa dificuldade a metodologia PDCA e KAIZEN em suas atividades. Necessitou de ajuda de pares e/ou superiores para a realização de análises quanto a resultados e/ou processos da área e para o desenvolvimento de ações.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Aplicou com eficácia as ferramentas PDCA e KAIZEN, buscando constante melhoria nos processos internos, resultando na redução dos custos e na otimização dos processos. Busca agir de forma ativa, com idéias inovadoras para acelerar o crescimento da empresa.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Foi capaz de multiplicar o conhecimento para a utilização das ferramentas de PDCA e KAIZEN. Buscou implementar ações simples e criativas, com ganhos significativos de produtividade e/ou excelencia em processos.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form17" runat="server">
+        <div>
+            <table id="minhaTabela17" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            SOLUÇÃO DE PROBLEMAS
+
+
+                        </td>
+                        <td>
+                            Não se conformar com os problemas e buscar soluções. Utilizar ferramentas de análise PDCA para a identificação e tratativas, considerando os riscos envolvidos e o impacto sobre resultados e pessoas.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Demonstrou pouca iniciativa e persistencia para buscar soluções. Conhece a metodologia PDCA, porém sem aplicabilidade.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Aplicou com certa dificuldade a ferramenta PDCA, porém demonstrou iniciativa e persistencia na busca por soluções. Precisou de ajuda de pares e/ou superiores para identificar os riscos e os impactos.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Utilizou a ferramenta PDCA, solucionando de forma clara e objetiva os problemas existentes, antes mesmo que o resultado fosse afetado.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Preocupa-se em investigar a causa raiz da situação problema, através da ferramenta PDCA. Assume as responsabilidades e define as ações a serem tomadas para a solução de problemas como um todo. Apresenta soluções viáveis, baseadas em análises e visão crítica.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form18" runat="server">
+        <div>
+            <table id="minhaTabela18" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            INOVAÇÃO
+
+
+                        </td>
+                        <td>
+                            Mantém-se antenado as tendências de mercado, esforçando-se para implementar novas ideias, processos e tecnologias.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou poucas novas ideias nos processos estabelecidos, sem ganhos consideráveis para a empresa.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Mantém-se estimulado a buscar novas ideias e as implementa de forma pontual, obtendo exito.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Desenvolveu e implementou soluções inovadoras para problemas conhecidos e processos, favorecendo a performance do departamento.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Desenvolveu e implementou novas tecnologia, serviços e/ou processos que contribuíram para o ganho de eficiencia, trazendo vantagem competitiva para a empresa.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form19" runat="server">
+        <div>
+            <table id="minhaTabela19" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            VISÃO DE NEGÓCIO
+
+
+                        </td>
+                        <td>
+                            Conhece de forma sistemica os negócios da empresa. Estabelece estratégias, metas, prioridades e cumpre de acordo com o planejado. Elabora planos de ação e  cronogramas, acompanhando as etapas e fazendo acontecer.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Apresentou dificuldades na análise de cenários internos e externos, afetando a definição de planos de ação. Entregou resultados pouco eficazes, necessitando de ajuda para tal.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Definiu estratégias de maneira pontual, implementou ações definidas em cronogramas, dentro dos prazos estabelecidos e acompanhou os resultados.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Identificou prioridades, mediante a análise de diferentes cenários. Definiu e implementou planos de ação preventivos e corretivos, monitorou cada etapa do processo, apoiando os envolvidos.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Apresentou organização e precisão na entrega das atividades. Agiu de forma antecipada, apresentando soluções antes que o problema pudesse ocorrer. Obteve excelentes resultados nas ações de melhorias implementadas, por meio de estratégias bem definidas.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+<body>
+    <form id="form20" runat="server">
+        <div>
+            <table id="minhaTabela20" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            CONHECIMENTO TÉCNICO
+
+
+                        </td>
+                        <td>
+                            Possui conhecimento e domínio das técnicas, métodos e etapas necessárias para a execução de suas atividades, contribuindo para a excelencia dos processos.
+
+
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td>
+                                    1
+                                </td>
+
+                                <td>
+                                    Em alguns casos apresentou falta de conhecimento técnico, impactando no desenvolvimento de suas atividades.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    2
+                                </td>
+
+                                <td>
+                                    Demonstrou conhecimento técnico satisfatório para a realização da sua atividade, necessitando por vezes de orientação. Realizou ações para adquirir o conhecimento técnico necessário, como leitura ou cursos.
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    3
+                                </td>
+
+                                <td>
+                                    Realizou suas atividades com autonomia, demonstrando domínio dos conhecimentos técnicos necessários a função exercida, sem a necessidade de orientações constantes.
+
+
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    4
+                                </td>
+
+                                <td>
+                                    Transmitiu conhecimento aos colegas, por apresentar domínio das técnicas, métodos e processos necessários a execução das suas atividades, contribuindo para a melhoria dos processos.
+
+
+
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+
+        </div>
+    </form>
+</body>
+    </html>
+
+            }

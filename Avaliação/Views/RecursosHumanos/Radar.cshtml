@@ -1,0 +1,176 @@
+﻿@model RecursosHumanosModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<!doctype html>
+<html>
+@{
+    foreach (var item in (List<RecursosHumanosModel>)ViewBag.RadarSV)
+
+    {
+        <head>
+            <title>Radar Tk Logistica do Brasil</title>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+            
+        </head>
+
+        <body>
+
+            <div style="width:80%">
+                <canvas id="canvas"></canvas>
+            </div>
+
+
+
+            <script>
+            var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100);
+        };
+
+        var color = Chart.helpers.color;
+        var config = {
+            type: 'radar',
+            data: {
+                labels: ['Compromisso com a Segurança', 'Compromisso com a Qualidade', 'Compromisso com Resultado', 'Espírito Empreendedor', 'Visão Estratégica', 'Disciplina', 'Foco no Cliente (int.|ext.)', 'Tomada de decisões', 'Desenvolvimento de Pessoas', 'Comunicação', 'Trabalho em Equipe', 'Inteligência Emocional', 'Planejamento', 'Melhoria Contínua', 'Solução de Problema', 'Inovação', 'Visão do Negócio'],
+                datasets: [{
+                    label: ['@item.Nome'],
+                    backgroundColor: '#81F79F',
+                    borderColor: '#0101DF',
+                    pointBackgroundColor:'#F80101',
+                    data: [
+                        @item.P1,
+                        @item.P2,
+                        @item.P3,
+                        @item.P4,
+                        @item.P5,
+                        @item.P6,
+                        @item.P7,
+                        @item.P8,
+                        @item.P9,
+                        @item.P10,
+                        @item.P11,
+                        @item.P12,
+                        @item.P13,
+                        @item.P14,
+                        @item.P15,
+                        @item.P16,
+                        @item.P17,
+
+                    ]
+
+
+                },
+                    {
+
+                }]
+            },
+            options: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Radar Tk Logistica do Brasil'
+                },
+                scale: {
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        };
+
+        window.onload = function () {
+            window.myRadar = new Chart(document.getElementById('canvas'), config);
+        };
+
+        document.getElementById('randomizeData').addEventListener('click', function () {
+            config.data.datasets.forEach(function (dataset) {
+                dataset.data = dataset.data.map(function () {
+                    return randomScalingFactor();
+                });
+            });
+
+            window.myRadar.update();
+        });
+
+        var colorNames = [ '#81F79F',];
+        document.getElementById('addDataset').addEventListener('click', function () {
+            var colorName = colorNames[config.data.datasets.length % colorNames.length];
+            var newColor = window.chartColors[colorName];
+
+            var newDataset = {
+                label: ['@item.Nome'],
+                borderColor: [ '#81F79F',],
+                backgroundColor: color(newColor).alpha(0.2).rgbString(),
+                pointBackgroundColor: newColor,
+                data: [
+                        @item.P1,
+                        @item.P2,
+                        @item.P3,
+                        @item.P4,
+                        @item.P5,
+                        @item.P6,
+                        @item.P7,
+                        @item.P8,
+                        @item.P9,
+                        @item.P10,
+                        @item.P11,
+                        @item.P12,
+                        @item.P13,
+                        @item.P14,
+                        @item.P15,
+                        @item.P16,
+                        @item.P17,
+
+                    ]
+
+
+            };
+
+            for (var index = 0; index < config.data.labels.length; ++index) {
+                newDataset.data.push(randomScalingFactor());
+            }
+
+            config.data.datasets.push(newDataset);
+            window.myRadar.update();
+        });
+
+        document.getElementById('addData').addEventListener('click', function () {
+            if (config.data.datasets.length > 0) {
+                config.data.labels.push('dataset #' + config.data.labels.length);
+
+                config.data.datasets.forEach(function (dataset) {
+                    dataset.data.push(randomScalingFactor());
+                });
+
+                window.myRadar.update();
+            }
+        });
+
+        document.getElementById('removeDataset').addEventListener('click', function () {
+            config.data.datasets.splice(0, 1);
+            window.myRadar.update();
+        });
+
+        document.getElementById('removeData').addEventListener('click', function () {
+            config.data.labels.pop(); // remove the label first
+
+            config.data.datasets.forEach(function (dataset) {
+                dataset.data.pop();
+            });
+
+            window.myRadar.update();
+        });
+            </script>
+
+
+
+        </body>
+        }
+    }
+
+    </html>

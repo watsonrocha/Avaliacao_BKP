@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "IndexSaida";
+}
+<br><br><br>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+<html lang="en" id="teste">
+<body>
+    <form asp-controller="AvaliacaoPessoas" asp-action="ValidarUser">
+        <div>
+            <table id="minhaTabela" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            Avaliar
+                        </td>
+                        <td>
+                            Nome do Colaborador
+                        </td>
+                        <td>
+                            Matricula
+                        </td>
+                        <td>
+                            Cargo
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        foreach (var item in (List<AvaliacaoPessoasModel>)ViewBag.ListaMatricula)
+                        {
+                            string companyname = @item.Matricula;
+                            <tr>
+                                <td><button type="button" name="button" id="button" class="btn btn-primary" onclick="Editar(@item.Matricula)">Avaliar</button></td>
+                                <td> @item.Nome.ToString()</td>
+                                <td> <input type="text" class="form-control" id="TextMtr" name="TextMtr" asp-for="@item.Matricula" disabled></td>
+                                <td> @item.Cargo.ToString()</td>
+                            </tr>
+                        }
+                    }
+            </table>
+        </div>
+    </form>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $('#minhaTabela').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'excel',
+                        text: 'Excel',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'csv',
+                        text: 'CSV',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    }]
+                });
+
+            });
+        </script>
+        <script>
+            function Editar(Id) {
+                window.location.href = "../AvaliacaoPessoas/Index/" + Id;
+            }
+        </script>
+    </body>
+</html>
+    }
+
+
+
+

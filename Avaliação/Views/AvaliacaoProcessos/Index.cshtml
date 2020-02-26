@@ -1,0 +1,59 @@
+﻿@model AvaliacaoProcessoModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+@{
+    Layout = "../Shared/_LayoutAvaliar.cshtml";
+}
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+
+
+<div class="container" style="background-color:rgba(239, 239, 239, 0.99); border-radius: 10px; padding:20px; width:300px;">
+    @{
+        try
+        {
+            if (TempData["MensagemLoginInvalido"].ToString() != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+                </div>
+            }
+        }
+        catch { }
+    }
+
+
+
+
+    <form asp-controller="AvaliacaoProcessos" asp-action="ValidarUser">
+
+
+
+        <div class="form-group">
+            <label for="pwd">Nome do Gestor:</label>
+            <input type="text" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioLogado") " asp-for="NomeGestor">
+        </div>
+        <div class="form-group">
+            <label for="Nome">Digite a Matricula do Colaborador:</label>
+            <input type="text" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioMatricula") " asp-for="Matricula">
+        </div>
+        <div class="checkbox">
+            <label style="font-size:150%;background-color:gainsboro;color:red"><b>Avaliação de Processos<b /></label>
+        </div>
+        <button type="submit" class="btn btn-primary">Avaliar</button>
+
+
+    </form>
+

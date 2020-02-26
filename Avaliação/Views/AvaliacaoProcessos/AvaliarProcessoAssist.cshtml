@@ -1,0 +1,208 @@
+﻿@model AvaliacaoProcessoModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+
+<h5><b style="font-size:20px">Bem Vindo a Avaliação Processos !</b><br> <b style="font-size:15px">Você está avaliando o colaborador : </b> <b style="color:red">@HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+<html lang="en" id="teste">
+<body>
+    <form asp-controller="AvaliacaoProcessos" asp-action="UpdateSenhaUpdate">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Melhoria Continua
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Capacidade de entender os processos internos e melhorar continuamente, considerando o ganho de produtividade, redução de custos e excelencia nos processos, aplicando PDCA e KAIZEN.
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos09" value="1" type="radio" asp-for="Processos09" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             1 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            BÁSICO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                           Conhece a metodologia PDCA e KAIZEN, mas ainda não realizou recomendações e melhorias, fase de aprendizado.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos09" value="2,5" type="radio" asp-for="Processos09" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                              2 
+                        </td>
+                        <td style="text-align:center;background:white">
+                             MÉDIO 
+                        </td>
+                       <td style="text-align:center;background:white">
+                              Aplicou com certa dificuldade a metodologia PDCA e KAIZEN em suas atividades. Necessitou de ajuda de pares e/ou superiores para a realização de análises quanto a resultados e/ou processos da área e para o desenvolvimento de ações.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos09" value="5" type="radio" asp-for="Processos09" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                               3 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            ALTO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                           Aplicou com eficácia as ferramentas PDCA e KAIZEN, buscando constante melhoria nos processos internos, resultando na redução dos custos e na otimização dos processos. Busca agir de forma ativa, com idéias inovadoras para acelerar o crescimento da empresa.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos09" value="7" type="radio" asp-for="Processos09" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                              4 
+                        </td>
+                        <td style="text-align:center;background:white">
+                             AVANÇADO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            Foi capaz de multiplicar o conhecimento para a utilização das ferramentas de PDCA e KAIZEN. Buscou implementar ações simples e criativas, com ganhos significativos de produtividade e/ou excelencia em processos.
+                        </td>
+                    </tr>
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela2" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Conhecimento Tecnico
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Possui conhecimento e domínio das técnicas, métodos e etapas necessárias para a execução de suas atividades, contribuindo para a excelencia dos processos.
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        {
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox130" name="Processos13" value="1" type="radio" asp-for="Processos13" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     BÁSICO 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     Em alguns casos apresentou falta de conhecimento técnico, impactando no desenvolvimento de suas atividades.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox131" name="Processos13" value="2,5" type="radio" asp-for="Processos13" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     2
+                                </td>
+                                <td style="text-align:center;background:white">
+                                    MÉDIO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                      Demonstrou conhecimento técnico satisfatório para a realização da sua atividade, necessitando por vezes de orientação. Realizou ações para adquirir o conhecimento técnico necessário, como leitura ou cursos.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox132" name="Processos13" value="5" type="radio" asp-for="Processos13" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     ALTO 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                    Realizou suas atividades com autonomia, demonstrando domínio dos conhecimentos técnicos necessários a função exercida, sem a necessidade de orientações constantes.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox133" name="Processos13" value="7" type="radio" asp-for="Processos13" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      4 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     AVANÇADO
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     Transmitiu conhecimento aos colegas, por apresentar domínio das técnicas, métodos e processos necessários a execução das suas atividades, contribuindo para a melhoria dos processos.
+                                </td>
+                            </tr>
+                        }
+                    }
+            </table>
+    </form>
+</body>
+<br>
+<button type="submit" class="btn btn-success" disabled>Finalizar Avaliação</button>
+</html>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#Checkbox130").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+          $(document).ready(function () {
+            $("#Checkbox131").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox132").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox133").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+    </script>
+}
+
+
+
+
+

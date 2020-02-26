@@ -1,0 +1,537 @@
+﻿@model CompetenciaModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+
+<h5><b style="font-size:20px">Bem Vindo a Avaliação Negocios!</b><br> <b style="font-size:15px">Você está avaliando o colaborador :</b> <b style="color:red"> @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+
+<html lang="en" id="teste">
+
+<body>
+    <form asp-controller="Competencia" asp-action="UpdateAssist">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Compromisso com a Segurança
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Cuidar da sua própria segurança e da segurança do outro, propagando as normas e procedimentos de segurança do trabalho, sendo exemplo. Fazer uso dos EPI´s corretamente e adotar o conceito de EIJI TOYODA: "O trabalho seguro é a porta para todos os trabalhos. Vamos atravessar essa porta."
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Negocios01" value="1" type="radio" asp-for="Negocios01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                              1 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            BÁSICO
+                        </td>
+
+
+                        <td style="text-align:center;background:white">
+                             Teve grande dificuldade para cumprir as normas de segurança. Não seguiu os procedimentos, podendo causar incidentes e/ou acidentes.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Negocios01" value="2,5" type="radio" asp-for="Negocios01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             2
+                        </td>
+                        <td style="text-align:center;background:white">
+                              MÉDIO 
+                        </td>
+
+                        <td style="text-align:center;background:white">
+                             Demonstrou com frequencia atitudes seguras. Respeitou e cumpriu as normas e regras de segurança e por vezes contribuiu na disseminação dos procedimentos.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Negocios01" value="5" type="radio" asp-for="Negocios01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             3
+                        </td>
+                        <td style="text-align:center;background:white">
+                              ALTO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                             Cumpriu as normas e procedimentos de segurança, além de propagar a segurança para outros. Mostrou interesse em participar das atividades relacionadas a área de segurança, apoiando as campanhas internas.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Negocios01" value="7" type="radio" asp-for="Negocios01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                              4 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            AVANÇADO
+                        </td>
+
+                        <td style="text-align:center;background:white">
+                           Influenciou rigorosamente o cumprimento nas normas de segurança em sua unidade e demais áreas que mantém relacionamento. Foi exigente com a falta de segurança a ponto de oferecer soluções imediatas para uma situação de risco. É facilitador  nos treinamentos internos relacionados a área de segurança.
+                        </td>
+                    </tr>
+
+            </table>
+            <br>
+            <div>
+                <table id="minhaTabela2" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                    <thead>
+                        <tr>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                               Pontuação
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Compromisso com a Qualidade
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                 Nivel
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Assume o compromisso com a qualidade dos serviços prestados, executando suas atividades com excelência, exatidão e sem incidencia de erros, evitando retrabalho e desperdícios.
+                            </td>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @{
+
+                            {
+
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox2" name="Negocios02" value="1" type="radio" asp-for="Negocios02" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        1 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         BÁSICO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                       Apresentou grande dificuldade em realizar as atividades corretamente, necessitando de constante orientação.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox2" name="Negocios02" value="2,5" type="radio" asp-for="Negocios02" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         2 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        MÉDIO
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                      
+                                            Realizou atividades de acordo com os procedimentos, porém necessitou de revisão e correções pontuais.
+                                          
+                                        
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox2" name="Negocios02" value="5" type="radio" asp-for="Negocios02" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                           3
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         ALTO
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                       Entregou trabalhos de forma excelente, sem erros com alto grau de qualidade.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox2" name="Negocios02" value="7" type="radio" asp-for="Negocios02" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         4 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          AVANÇADO
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                       
+                                            Preocupou em cumprir na íntegra os processos operacionais, aperfeiçoando os procedimentos e políticas para evitar retrabalhos e desperdícios. Disseminou as informações relacionadas a qualidade, demonstrando a importância da excelência na realização das atividades diárias.
+                                       
+                                    </td>
+                                </tr>
+
+
+
+                            }
+
+                        }
+                </table>
+                <br>
+            </div>
+
+            <div>
+                <table id="minhaTabela03" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                    <thead>
+                        <tr>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Pontuação
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Compromisso com o Resultado
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                 Nivel 
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                 Atinge os objetivos e metas estabelecidas, demonstra energia para assumir novos desafios e trabalha ativamente para melhorar a si mesmo. Em momentos de pressão, é persistente, sabendo priorizar, otimizar e alocar os recursos adequadamente dentro dos prazos e orçamentos previstos.
+                            </td>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @{
+
+                            {
+
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox3" name="Negocios03" value="1" type="radio" asp-for="Negocios03" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          1 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         BÁSICO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                          Entregou os resultados abaixo do esperado e apresentou dificuldade em priorizar corretamente suas ações / atividades. Necessitou de orientação e/ou supervisão constante para atendimento ao prazo e orçamento.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox3" name="Negocios03" value="2,5" type="radio" asp-for="Negocios03" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          2 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        MÉDIO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                         Entregou os resultados acordados, dentro dos prazos e orçamentos estabelecidos.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox3" name="Negocios03" value="5" type="radio" asp-for="Negocios03" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                           3
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         ALTO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                         Entregou resultados acima do esperado, respeitando ou superando os prazos, otimizando recursos e orçamento.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox3" name="Negocios03" value="7" type="radio" asp-for="Negocios03" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                           4 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         AVANÇADO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                       Atingiu resultados excepcionais em relação aos prazos, orçamentos e metas, superando grandes obstáculos e adversidades. Agregou valor ao negócio ao direcionar ou redirecionar outras pessoas e áreas no desempenho de suas atividades.
+                                    </td>
+                                </tr>
+
+
+
+                            }
+
+                        }
+                </table>
+                <br>
+            </div>
+
+
+
+
+            <div>
+                <table id="minhaTabela06" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                    <thead>
+                        <tr>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Pontuação
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Disciplina
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                 Nivel 
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Conhece, respeita e adota como prática as regras, normas da empresa, regulamentos e procedimentos. Demonstra comprometimento com a liderança, sendo pontual, evitando faltar ao trabalho sem necessidade e contribuindo com a realização de horas extras, quando necessário.
+                                </br>
+
+                            </td>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @{
+
+                            {
+
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox4" name="Negocios06" value="1" type="radio" asp-for="Negocios06" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                            1 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        BÁSICO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                          Não cumpriu as regras da empresa, não demonstrou comprometimento em realizar horas extras e apresentou faltas sem justificativas.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox4" name="Negocios06" value="2,5" type="radio" asp-for="Negocios06" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         2 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                       MÉDIO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                         Cumpriu parcialmente as políticas e regras da empresa e mesmo discordando, atendeu as orientações recebidas do seu superior. Apresentou algumas ausências, porém reportou ao gestor imediato.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox4" name="Negocios06" value="5" type="radio" asp-for="Negocios06" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          3 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         ALTO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                        Antecipou as faltas possíveis, apresentando alternativas para compensação (troca de horários e/ou realização de horas extras). Cumpriu os regulamentos e procedimentos da empresa, sem orientação do seu superior.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox4" name="Negocios06" value="7" type="radio" asp-for="Negocios06" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         4 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          AVANÇADO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                          Cumpriu as políticas e regras da empresa, sugerindo melhorias de acordo com sua função. Apresentou raros atrasos ao longo do período e grande participação em horas extras,  sendo considerado pela equipe, exemplo de pontualidade, demonstrando alto grau de comprometimento com a empresa.
+                                    </td>
+                                </tr>
+
+
+
+                            }
+
+                        }
+                </table>
+                <br>
+            </div>
+
+
+
+            <div>
+                <table id="minhaTabela07" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                    <thead>
+                        <tr>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                               Pontuação
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Foco no Cliente(INTERNO/ EXTERNO)
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                 NIVEL 
+                            </td>
+                            <td style="background:#4489f6;text-align:center;color:white">
+                                Entende e propõe soluções que atendem as expectativas dos clientes internos e externos com agilidade, assertividade e atendimento personalizado.
+                            </td>
+
+                        </tr>
+
+                    </thead>
+                    <tbody>
+
+                        @{
+
+                            {
+
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox50" name="Negocios07" value="1" type="radio" asp-for="Negocios07" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        1 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        BÁSICO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                        Apresentou grande dificuldade para identificar as necessidades dos clientes internos e externos, sendo impossível a proposta de soluções.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox51" name="Negocios07" value="2,5" type="radio" asp-for="Negocios07" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         2 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         MÉDIO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                         Atendeu parcialmente as expectativas dos clientes, necessitando de ajuda para apresentação de soluções assertivas.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox52" name="Negocios07" value="5" type="radio" asp-for="Negocios07" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                           3 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                        ALTO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                        Reconheceu as necessidades dos clientes e soube adaptar recursos, produtos, serviços e/ou operações alcançando a satisfação dos clientes.
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align:center;background:white">
+                                        <input id="Checkbox53" name="Negocios07" value="7" type="radio" asp-for="Negocios07" />
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                          4 
+                                    </td>
+                                    <td style="text-align:center;background:white">
+                                         AVANÇADO 
+                                    </td>
+
+                                    <td style="text-align:center;background:white">
+                                         Superou a expectativa dos clientes ao desenvolver soluções personalizadas de forma assertiva e ágil. Realizou ações para estimular outras pessoas nessa direção.
+                                    </td>
+                                </tr>
+
+
+
+                            }
+
+                        }
+
+                </table>
+    </form>
+</body>
+
+
+@section Scripts {
+
+    <script>
+
+        $(document).ready(function () {
+            $("#Checkbox50").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+        });
+          $(document).ready(function () {
+            $("#Checkbox51").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox52").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox53").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+        });
+
+    </script>
+
+    <button type="submit" class="btn btn-success" disabled>Finalizar Avaliação</button>
+}
+

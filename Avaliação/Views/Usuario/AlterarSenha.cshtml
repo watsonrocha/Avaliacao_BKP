@@ -1,0 +1,71 @@
+﻿@model UsuarioModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+
+
+@{
+    Layout = "../Shared/_LayoutAlterarSenha.cshtml";
+}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container" style="background-color:rgba(239, 239, 239, 0.99); border-radius: 10px; padding:20px; width:300px;">
+    @{
+        try
+        {
+            if (TempData["MensagemLoginInvalido"].ToString() != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+                </div>
+            }
+        }
+        catch { }
+    }
+
+    <form asp-controller="Usuario" asp-action="UpdateSenhaUpdate">
+        <div class="form-group">
+            <label for="Nome">Nome:</label>
+            <input type="text" class="form-control" value="@HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioLogado") " asp-for="Nome">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Nova Senha:</label>
+            <input type="password" id=" TextSenha" name="TextSenha" class="form-control" asp-for="Senha">
+
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Lembrar meu acesso</label>
+        </div>
+        <button type="submit" class="btn btn-success" onclick="UpdateAlteraSenha()">Alterar Senha</button>
+
+
+    </form>
+</div>
+
+@section Scripts {
+
+    <script>
+
+        function UpdateAlteraSenha() {
+
+            window.location.href = "../Usuario/UpdateSenhaUpdate/";
+
+        }
+
+
+
+
+
+    </script>
+
+
+}

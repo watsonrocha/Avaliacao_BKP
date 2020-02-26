@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "../Shared/_LayoutNineBox.cshtml";
+}
+<html>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+@{
+    foreach (var item in (List<RecursosHumanosModel>)ViewBag.NineSvSenior)
+
+    {
+        <head>
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(drawSeriesChart);
+
+        function drawSeriesChart() {
+
+              var data = google.visualization.arrayToDataTable([
+                ['Colaborador', 'Y', 'X', 'Unidade'],
+                ['Menu', 100, 100,'NiNeBox'],
+                ['@item.Nome',(@item.Total_Competencias.ToString()),(@item.Total),'@item.Unidade'],
+
+
+                 ]);
+
+            var options = {
+                title: ' ',
+                hAxis: { title: 'RESULTADOS' },
+                vAxis: { title: 'COMPETÊNCIAS' },
+
+
+               
+            };
+
+            var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+            chart.draw(data, options);
+        }
+            </script>
+        </head>
+        <body>
+            <div id="series_chart_div" style="width: 1030px; height: 660px;opacity:0.7;margin-top:320px; margin-left:48px;"></div>
+        </body>
+    }
+}
+</html>

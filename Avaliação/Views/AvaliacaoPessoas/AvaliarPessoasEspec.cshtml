@@ -1,0 +1,303 @@
+﻿@model AvaliacaoPessoasModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+
+<h5><b style="font-size:20px">Bem Vindo a Avaliação de Pessoas !</b><br> <b style="font-size:15px"> Você está avaliando o colaborador :</b> <b style="color:red"> @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+
+<html lang="en" id="teste">
+
+<body>
+    <form asp-controller="AvaliacaoPessoas" asp-action="UpdateSenhaUpdate">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Comunicação 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Nivel  
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                        Transmite com exatidão informações e ideias de maneira rápida, objetiva, clara e transparente. Apresenta objetividade quando fala e escreve, certificando que a outra parte compreendeu a informação.
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Pessoas16" value="0,769230769" type="radio" asp-for="Pessoas16" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                               1
+                        </td>
+                        <td style="text-align:center;background:white">
+                              BÁSICO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                              Apresentou dificuldades de comunicação, expressando-se de forma pouco clara e objetiva. Frequentemente recebeu orientação para utilizar a objetividade em comunicação oral e escrita.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Pessoas16" value="1,923076923" type="radio" asp-for="Pessoas16" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                              2
+                        </td>
+                        <td style="text-align:center;background:white">
+                            MÉDIO
+                        </td>
+                        <td style="text-align:center;background:white">
+                           Transmitiu suas ideias, opiniões e informações de forma objetiva, porém, sem se preocupar em checar o entendimento do receptor, o que gerou algum retrabalho.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Pessoas16" value="3,846153846" type="radio" asp-for="Pessoas16" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                               3
+                        </td>
+                        <td style="text-align:center;background:white">
+                              ALTO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            Emitiu e recebeu informações de forma adequada, proporcionando no outro o sentimento de ter sido ouvido e entendido, o que agilizou o processo de comunicação.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Pessoas16" value="5,384615385" type="radio" asp-for="Pessoas16" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                               4
+                        </td>
+                        <td style="text-align:center;background:white">
+                              AVANÇADO
+                        </td>
+                        <td style="text-align:center;background:white">
+                              Demonstrou comunicação clara e assertiva, agilizando a transmissão de mensagens aos colegas. Atuou como facilitador em conversações, em razão do seu bom grau de compreensão e transmissão de ideias. Constantemente se preocupou para que a mensagem fosse transmitida da melhor forma.
+                        </td>
+                    </tr>
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela02" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Trabalho em Equipe
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                               NIvel
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                               Exerce o trabalho em conjunto, buscando o objetivo comum, valoriza a sua contribuição e dos demais membros da equipe, além da troca de conhecimento para a solução dos problemas.
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        {
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Pessoas17" value="0,769230769" type="radio" asp-for="Pessoas17" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                    1
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      BÁSICO 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Possui grande dificuldade em colaborar com o gupo, não entendendo a importância do apoio aos demais membros da equipe.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Pessoas17" value="1,923076923" type="radio" asp-for="Pessoas17" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     2 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      MÉDIO
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Indica comportamentos de colaboração com a equipe somente quando é solicitado, falta pro atividade e proximidade com os membros da equipe.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Pessoas17" value="3,846153846" type="radio" asp-for="Pessoas17" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      3
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     ALTO
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Colabora com todos da empresa, independente da posição hierárquica, está sempre disposto a ajudar a equipe de forma ativa e motivadora, possui flexibilidade e respeito as diferenças individuais.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Pessoas17" value="5,384615385" type="radio" asp-for="Pessoas17" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     4
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     AVANÇADO 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Possui grande habilidade de inserção em diversos grupos, se relaciona com todos da equipe promovendo a confiança, igualdade e reforçando a importância de cada um na busca dos resultados. 
+                                </td>
+                            </tr>
+
+                        }
+                    }
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela03" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Iniciativa
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            NIvel
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Apresenta proatividade no dia a dia, estando disposto a dar o primeiro passo em todos os desafios. Demonstra senso de urgência, analisando possíveis impactos, sendo ágil na solução de problemas e tomada de decisão. 
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+
+                        {
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox200" name="Pessoas20" value="0,769230769" type="radio" asp-for="Pessoas20" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      BÁSICO 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Percebe os desafios, porém encara como obstáculo. É reativo às mudanças e aguarda orientação de outras pessoas para agir. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox201" name="Pessoas20" value="1,923076923" type="radio" asp-for="Pessoas20" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       2  
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      MÉDIO
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Sabe a importância de resolver as situações, porém acaba procrastinando algumas tarefas, gerando desconforto na equipe, acumulo de tarefas e atraso nas entregas. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox202" name="Pessoas20" value="3,846153846" type="radio" asp-for="Pessoas20" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       ALTO  
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Assume responsabilidade, parte para a ação, corre riscos e possui forte senso de urgência. Se compromete em resolver os problemas aos invés de criá-los. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox203" name="Pessoas20" value="5,384615385" type="radio" asp-for="Pessoas20" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       4  
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      AVANÇADO  
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      Busca naturalmente novos desafios, é criativo na solução dos problemas. Assume a responsabilidade para si, despertando nas pessoas confiança e entusiasmo. Compreende as transformações do ambiente, desenvolvendo novas atitudes que possam contribuir para o seu crescimento e evolução na empresa.
+                                </td>
+                            </tr>
+                        }
+
+                    }
+            </table>
+    </form>
+</body>
+</html>
+<br>
+<button type="submit" class="btn btn-success" disabled onclick="Editar()">Finalizar Avaliação</button>
+
+@section Scripts {
+
+    <script>
+       $(document).ready(function () {
+            $("#Checkbox200").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+        $(document).ready(function () {
+            $("#Checkbox201").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+        $(document).ready(function () {
+            $("#Checkbox202").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+        $(document).ready(function () {
+            $("#Checkbox203").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+         function Editar() {
+                window.location.href = "../AvaliacaoPessoas/UpdateSenhaUpdate/";
+            }
+
+    </script>
+}
+
+
+
+
+
+
+

@@ -1,0 +1,178 @@
+﻿
+@{
+    ViewData["Title"] = "IndexSaida";
+}
+
+<h3>Relátorio de Cadastro de Avaliação</h3>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+
+<html lang="en" id="teste">
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table id="minhaTabela" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            Data da Avaliação
+                        </td>
+                        <td>
+                            Avaliador
+                        </td>
+                        <td>
+                            Avaliado
+                        </td>
+                        <td>
+                            Cargo do Colaborador
+                        </td>
+                        <td>
+                            Status
+                        </td>
+                        <td>
+                            Compromisso com a Segurança
+                        </td>
+                        <td>
+                            Compromisso com a Qualidade
+                        </td>
+                        <td>
+                            Compromisso com Resultado
+                        </td>
+                        <td>
+                            Espírito Empreendedor
+                        </td>
+                        <td>
+                            Visão Estratégica
+                        </td>
+                        <td>
+                            Disciplina
+                        </td>
+                        <td>
+                            Foco no Cliente (int.|ext.)
+                        </td>
+                        <td>
+                            Tomada de decisões
+                        </td>
+                        <td>
+                            Desenvolvimento de Pessoas
+                        </td>
+                        <td>
+                            Comunicação
+                        </td>
+                        <td>
+                            Trabalho em Equipe
+                        </td>
+                        <td>
+                            Inteligência Emocional
+                        </td>
+                        <td>
+                            Relacionamento Interpessoal
+                        </td>
+                        <td>
+                            Iniciativa
+                        </td>
+                        <td>
+                            Planejamento
+                        </td>
+                        <td>
+                            Melhoria Contínua
+                        </td>
+                        <td>
+                            Solução de Problema
+                        </td>
+                        <td>
+                            Inovação
+                        </td>
+                        <td>
+                            Visão do Negócio
+                        </td>                       
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        foreach (var item in (List<RecursosHumanosModel>)ViewBag.ListaCadastro)
+                        {
+                    <tr>
+                        <td>@item.Data.ToString()</td>
+                        <td>@item.NomeGestor.ToString()</td>
+                        <td>@item.Nome.ToString()</td>
+                        <td>@item.Cargo.ToString()</td>
+                        <td>@item.Status.ToString()</td>
+                        <td>@item.Negocios01.ToString()</td>
+                        <td>@item.Negocios02.ToString()</td>
+                        <td>@item.Negocios03.ToString()</td>
+                        <td>@item.Negocios04.ToString()</td>
+                        <td>@item.Negocios05.ToString()</td>
+                        <td>@item.Negocios06.ToString()</td>
+                        <td>@item.Pessoas14.ToString()</td>
+                        <td>@item.Pessoas15.ToString()</td>
+                        <td>@item.Pessoas16.ToString()</td>
+                        <td>@item.Pessoas17.ToString()</td>
+                        <td>@item.Pessoas18.ToString()</td>
+                        <td>@item.Pessoas19.ToString()</td>
+                        <td>@item.Pessoas20.ToString()</td>
+                        <td>@item.Processos08.ToString()</td>
+                        <td>@item.Processos09.ToString()</td>
+                        <td>@item.Processos10.ToString()</td>
+                        <td>@item.Processos11.ToString()</td>
+                        <td>@item.Processos12.ToString()</td>
+                        <td>@item.Processos13.ToString()</td>
+
+                    </tr>
+                        }
+
+                    }
+            </table>
+    </form>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $('#minhaTabela').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'excel',
+                        text: 'Excel',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'csv',
+                        text: 'CSV',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    }]
+                });
+
+            });
+
+        </script>
+        </div>
+
+    </body>
+</html>
+    }
+
+
+
+

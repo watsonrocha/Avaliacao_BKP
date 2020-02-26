@@ -1,0 +1,39 @@
+﻿@model UsuarioModel
+
+
+@{
+    Layout = "../Shared/_LayoutLogin.cshtml";
+}
+
+<br><br><br><br><br><br><br><br>
+
+<div class="container" style="background-color:rgba(239, 239, 239, 0.99); border-radius: 10px; padding:20px; width:300px;">
+    @{
+        try
+        {
+            if (TempData["MensagemLoginInvalido"].ToString() != null)
+            {
+                <div class="alert alert-danger">
+                    <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+                </div>
+            }
+        }
+        catch { }
+    }
+
+    <form asp-controller="Usuario" asp-action="ValidarLogin">
+        <div class="form-group">
+            <label for="Nome">Digite o seu CPF:</label>
+            <input type="text" autocomplete="off" AutoCompleteType="Disabled"  class="form-control" id="TextNome" asp-for="CPF">
+        </div>
+        <div class="form-group">
+            <label for="pwd">Digite a sua Senha:</label>
+            <input type="password" class="form-control" asp-for="Senha">
+        </div>
+        <div class="form-group">
+            <label><input type="checkbox" asp-for="Perfil2"  value="6"> Acesso Administrador</label>
+        </div>
+
+        <button type="submit" class="btn btn-success">Entrar</button>
+    </form>
+</div>

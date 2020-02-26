@@ -1,0 +1,370 @@
+﻿@model AvaliacaoCargoModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Avaliação Requisito Cargo";
+}
+
+<h5><b style="font-size:20px">Bem Vindo a Avaliação Requisito ao Cargo !</b><br> <b style="font-size:15px"> Você está avaliando o colaborador :</b> <b style="color:red"> @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+
+<html lang="en" id="teste">
+
+<body>
+    <form asp-controller="AvaliacaoCargo" asp-action="UpdateSupervJunior">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              REQUISITO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           SIM 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             NÃO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                         
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           VEICULO PRÓPRIO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="3.33" type="radio" asp-for="Veiculo_proprio" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="0" type="radio" asp-for="Veiculo_proprio" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           
+                                CNH VÁLIDA
+                            
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="3.33" type="radio" asp-for="CNH_Valida" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="0" type="radio" asp-for="CNH_Valida" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           
+                                HABILIDADE EM DIRIGIR
+                           
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Checkbox3" value="3.33" type="radio" asp-for="habilidade_em_dirigir" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Checkbox3" value="0" type="radio" asp-for="habilidade_em_dirigir" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          ESCOLARIDADE 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                                COMPLETO
+                           
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                                CURSANDO
+                         
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                                INTERROMPIDO
+                            
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                                NÃO POSSUI
+                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           
+                               ENSINO FUNDAMENTAL
+                          
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                          
+                               ENSINO MEDIO
+                            
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio"  />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           
+                                SUPERIOR / TECNICO
+                           
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0.54" type="radio" asp-for="Superior_completo" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0.23" type="radio" asp-for="Superior_completo" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" asp-for="Superior_completo" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" asp-for="Superior_completo" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           
+                                PÓS-GRADUAÇÃO / MBA
+                           
+                        </td>
+
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="1.5" type="radio" asp-for="Pos_graduacao_MBA_CURSANDO" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="1,07" type="radio" asp-for="Pos_graduacao_MBA_CURSANDO" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" asp-for="Pos_graduacao_MBA_CURSANDO" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="0" type="radio" asp-for="Pos_graduacao_MBA_CURSANDO" />
+                        </td>
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            CURSOS ADICIONAIS 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            SIM 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           NÃO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                        </td>
+                    </tr>
+                </thead>
+                </tr>
+                <tr>
+                    <td style="text-align:center;background:white">
+                      
+                            INGLÊS INTERMEDIARIO
+                       
+                    </td>
+                    <td style="text-align:center;background:white">
+                 
+                    </td>
+                    <td style="text-align:center;background:white">
+                        <input id="Checkbox5" name="Checkbox5" value="3.33" type="radio" asp-for="Ingles_intermediario" />
+                    </td>
+                    <td style="text-align:center;background:white">
+                        <input id="Checkbox5" name="Checkbox5" value="0" type="radio" asp-for="Ingles_intermediario" />
+                    </td>
+                    <td style="text-align:center;background:white">
+                      
+                    </td>
+                </tr>
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            REQUISITO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              SIM 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             NÃO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                           FLEXIBILIDADE DE HORÁRIO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox6" name="Checkbox6" value="3.33" type="radio" asp-for="Flexibilidade_horario" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox6" name="Checkbox6" value="0" type="radio" asp-for="Flexibilidade_horario" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                          MUDANÇA DE RESIDÊNCIA 
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox7" name="Checkbox7" value="3.33" type="radio" asp-for="Mudanca_residencia" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox7" name="Checkbox7" value="0" type="radio" asp-for="Mudanca_residencia" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            VOCE JÁ REALIZOU JOB ROTATION?
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox8" name="Checkbox8" value="3.33" type="radio" asp-for="Job_Rotation" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox8" name="Checkbox8" value="0" type="radio" asp-for="Job_Rotation" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                        </td>
+                    </tr>
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             CURSOS ADICIONAIS 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           SIM 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            NÃO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                        </td>
+                    </tr>
+                </thead>
+                </tr>
+                <tr>
+                    <td style="text-align:center;background:white">
+                     
+                            PACOTE OFFICE INTERMEDIÁRIO
+                       
+                    </td>
+                    <td style="text-align:center;background:white">
+                     
+                    </td>
+                    <td style="text-align:center;background:white">
+                        <input id="Checkbox9" name="Checkbox9" value="3.33" type="radio" asp-for="Pacote_Office_intermediario" />
+                    </td>
+                    <td style="text-align:center;background:white">
+                        <input id="Checkbox9" name="Checkbox9" value="0" type="radio" asp-for="Pacote_Office_intermediario" />
+                    </td>
+                    <td style="text-align:center;background:white">
+
+                    </td>
+                </tr>
+                <thead>
+            </table>
+            </thead>
+
+</form>
+
+</body>
+
+</html>
+<br>
+<button type="submit" class="btn btn-success" disabled>Finalizar Avaliação</button>
+    </html>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $("#Checkbox9").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+          $(document).ready(function () {
+            $("#Checkbox9").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+            });
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+
+

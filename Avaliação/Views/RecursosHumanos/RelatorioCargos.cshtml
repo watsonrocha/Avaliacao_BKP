@@ -1,0 +1,354 @@
+﻿
+@{
+    ViewData["Title"] = "IndexSaida";
+}
+
+<h3>Relátorio de Cadastro de Cargo</h3>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css" />
+
+<html lang="en" id="teste">
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <table id="minhaTabela" class="table table-bordered modal- alert-info" style="width:100%" align="center" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td>
+                            CARGO JUNIOR
+                        </td>
+                        <td>
+                            NomeGestor
+                        </td>
+                        <td>
+                            Matricula
+                        </td>
+                        <td>
+                            Avaliador
+                        </td>
+                        <td>
+                            Veiculo_proprio
+                        </td>
+                        <td>
+                            CNH_Valida
+                        </td>
+                        <td>
+                            habilidade_em_dirigir
+                        </td>
+                        <td>
+                            Operador_de_Empilhadeira
+                        </td>
+                        <td>
+                            tecnico_completo
+                        </td>
+                        <td>
+                            Superior_completo
+                        </td>
+                        <td>
+                            Pos_graduação_completo
+                        </td>
+                        <td>
+                            Pos_graduação_MBA_CURSANDO
+                        </td>
+                        <td>
+                            Ingles_basico
+                        </td>
+                        <td>
+                            Ingles_basico_CURSANDO
+                        </td>
+                        <td>
+                            Ingles_intermediario
+                        </td>
+                        <td>
+                            Ingles_intermediario_CURSANDO
+                        </td>
+                        <td>
+                            flexibilidade_horario
+                        </td>
+                        <td>
+                            Mudanca_residencia
+                        </td>
+                        <td>
+                            Job_rotation
+                        </td>
+                        <td>
+                            Pacote_Office_basico
+                        </td>
+                        <td>
+                            Pacote_Office_intermediario
+                        </td>
+
+
+
+                        <td>
+                            CARGO PLENO
+                        </td>
+                        <td>
+                            NomeGestor
+                        </td>
+                        <td>
+                            Matricula
+                        </td>
+                        <td>
+                            Avaliador
+                        </td>
+                        <td>
+                            Veiculo_proprio
+                        </td>
+                        <td>
+                            CNH_Valida
+                        </td>
+                        <td>
+                            habilidade_em_dirigir
+                        </td>
+                        <td>
+                            Operador_de_Empilhadeira
+                        </td>
+                        <td>
+                            tecnico_completo
+                        </td>
+                        <td>
+                            Superior_completo
+                        </td>
+                        <td>
+                            Pos_graduação_completo
+                        </td>
+                        <td>
+                            Pos_graduação_MBA_COMPLETO
+                        </td>
+                        <td>
+                            Ingles_basico
+                        </td>
+                        <td>
+                            Ingles_basico_CURSANDO
+                        </td>
+                        <td>
+                            Ingles_intermediario
+                        </td>
+                        <td>
+                            Ingles_Avancado_CURSANDO
+                        </td>
+                        <td>
+                            flexibilidade_horario
+                        </td>
+                        <td>
+                            Mudanca_residencia
+                        </td>
+                        <td>
+                            Job_rotation
+                        </td>
+                        <td>
+                            Pacote_Office_basico
+                        </td>
+                        <td>
+                            Pacote_Office_intermediario
+                        </td>
+                        <td>
+                            Pacote_Office_Avancado
+                        </td>
+
+
+                        <td>
+                            CARGO SENIOR
+                        </td>
+                        <td>
+                            NomeGestor
+                        </td>
+                        <td>
+                            Matricula
+                        </td>
+                        <td>
+                            Avaliador
+                        </td>
+                        <td>
+                            Veiculo_proprio
+                        </td>
+                        <td>
+                            CNH_Valida
+                        </td>
+                        <td>
+                            habilidade_em_dirigir
+                        </td>
+                        <td>
+                            Operador_de_Empilhadeira
+                        </td>
+                        <td>
+                            tecnico_completo
+                        </td>
+                        <td>
+                            Superior_completo
+                        </td>
+                        <td>
+                            Pos_graduação_completo
+                        </td>
+                        <td>
+                            Pos_graduação_MBA_COMPLETO
+                        </td>
+                        <td>
+                            Pos_graduação_MBA_CURSANDO
+                        </td>
+                        <td>
+                            Ingles_basico
+                        </td>
+                        <td>
+                            Ingles_basico_CURSANDO
+                        </td>
+                        <td>
+                            Ingles_intermediario
+                        </td>
+                        <td>
+                            Ingles_Avancado_COMPLETO
+                        </td>
+                        <td>
+                            flexibilidade_horario
+                        </td>
+                        <td>
+                            Mudanca_residencia
+                        </td>
+                        <td>
+                            Job_rotation
+                        </td>
+                        <td>
+                            Pacote_Office_basico
+                        </td>
+                        <td>
+                            Pacote_Office_intermediario
+                        </td>
+                        <td>
+                            Pacote_Office_Avancado
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @{
+                        foreach (var item in (List<RecursosHumanosModel>)ViewBag.ListaCargo)
+                        {
+                    <tr>
+                        <td>@item.Data.ToString()</td>
+                        <td>@item.NomeGestor.ToString()</td>
+                        <td>@item.Matricula.ToString()</td>
+                        <td>@item.Avaliador.ToString()</td>
+                        <td>@item.Veiculo_proprio.ToString()</td>
+                        <td>@item.CNH_Valida.ToString()</td>
+                        <td>@item.habilidade_em_dirigir.ToString()</td>
+                        <td>@item.Operador_de_Empilhadeira.ToString()</td>
+                        <td>@item.tecnico_completo.ToString()</td>
+                        <td>@item.Superior_completo.ToString()</td>
+                        <td>@item.Pos_graduação_completo.ToString()</td>
+                        <td>@item.Pos_graduação_MBA_CURSANDO.ToString()</td>
+                        <td>@item.Ingles_basico.ToString()</td>
+                        <td>@item.Ingles_basico_CURSANDO.ToString()</td>
+                        <td>@item.Ingles_intermediario.ToString()</td>
+                        <td>@item.Ingles_intermediario_CURSANDO.ToString()</td>
+                        <td>@item.flexibilidade_horario.ToString()</td>
+                        <td>@item.Mudanca_residencia.ToString()</td>
+                        <td>@item.Job_rotation.ToString()</td>
+                        <td>@item.Pacote_Office_basico.ToString()</td>
+                        <td>@item.Pacote_Office_intermediario.ToString()</td>
+
+                        
+                        <td>@item.NomeGestor.ToString()</td>
+                        <td>@item.Matricula.ToString()</td>
+                        <td>@item.Avaliador.ToString()</td>
+                        <td>@item.Veiculo_proprio.ToString()</td>
+                        <td>@item.CNH_Valida.ToString()</td>
+                        <td>@item.habilidade_em_dirigir.ToString()</td>
+                        <td>@item.Operador_de_Empilhadeira.ToString()</td>
+                        <td>@item.tecnico_completo.ToString()</td>
+                        <td>@item.Superior_completo.ToString()</td>
+                        <td>@item.Pos_graduação_completo.ToString()</td>
+                        <td>@item.Pos_graduação_MBA_COMPLETO.ToString()</td>
+                        <td>@item.Ingles_basico.ToString()</td>
+                        <td>@item.Ingles_basico_CURSANDO.ToString()</td>
+                        <td>@item.Ingles_intermediario.ToString()</td>
+                        <td>@item.Ingles_Avancado_CURSANDO.ToString()</td>
+                        <td>@item.flexibilidade_horario.ToString()</td>
+                        <td>@item.Mudanca_residencia.ToString()</td>
+                        <td>@item.Job_rotation.ToString()</td>
+                        <td>@item.Pacote_Office_basico.ToString()</td>
+                        <td>@item.Pacote_Office_intermediario.ToString()</td>
+                        <td>@item.Pacote_Office_Avancado.ToString()</td>
+
+                        <td>@item.Data.ToString()</td>
+                        <td>@item.NomeGestor.ToString()</td>
+                        <td>@item.Matricula.ToString()</td>
+                        <td>@item.Avaliador.ToString()</td>
+                        <td>@item.Veiculo_proprio.ToString()</td>
+                        <td>@item.CNH_Valida.ToString()</td>
+                        <td>@item.habilidade_em_dirigir.ToString()</td>
+                        <td>@item.Operador_de_Empilhadeira.ToString()</td>
+                        <td>@item.tecnico_completo.ToString()</td>
+                        <td>@item.Superior_completo.ToString()</td>
+                        <td>@item.Pos_graduação_completo.ToString()</td>
+                        <td>@item.Pos_graduação_MBA_COMPLETO.ToString()</td>
+                        <td>@item.Pos_graduação_MBA_CURSANDO.ToString()</td>
+                        <td>@item.Ingles_basico.ToString()</td>
+                        <td>@item.Ingles_basico_CURSANDO.ToString()</td>
+                        <td>@item.Ingles_intermediario.ToString()</td>
+                        <td>@item.Ingles_Avancado_COMPLETO.ToString()</td>
+                        <td>@item.flexibilidade_horario.ToString()</td>
+                        <td>@item.Mudanca_residencia.ToString()</td>
+                        <td>@item.Job_rotation.ToString()</td>
+                        <td>@item.Pacote_Office_basico.ToString()</td>
+                        <td>@item.Pacote_Office_intermediario.ToString()</td>
+                        <td>@item.Pacote_Office_Avancado.ToString()</td>
+
+
+                    </tr>
+                        }
+
+                    }
+            </table>
+    </form>
+
+    @section Scripts {
+        <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+        <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.3.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js"></script>
+        <script type="text/javascript" src="https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js"></script>
+        <script>
+
+            $(document).ready(function () {
+                $('#minhaTabela').DataTable({
+                    dom: 'Bfrtip',
+                    buttons: [{
+                        extend: 'excel',
+                        text: 'Excel',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'csv',
+                        text: 'CSV',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    },
+                    {
+                        extend: 'pdf',
+                        text: 'PDF',
+                        className: 'exportExcel',
+                        filename: 'Relatorio_de_Avaliacao',
+                        exportOptions: { modifier: { page: 'all' } }
+                    }]
+                });
+
+            });
+
+        </script>
+        </div>
+
+    </body>
+</html>
+    }
+
+
+
+

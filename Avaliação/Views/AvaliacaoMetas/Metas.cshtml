@@ -1,0 +1,199 @@
+﻿@model AvaliacaoMetasModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+<br>
+<br>
+<br>
+<br>
+<h5><b style="font-size:20px">Bem Vindo a Avaliação de Metas !</b><br> <b style="font-size:15px"> Você está avaliando o colaborador :</b> <b style="color:red">  @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+<html lang="en" id="teste">
+<body>
+    <form asp-controller="AvaliacaoMetas" asp-action="UpdateRH">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                          
+                                META CORPORATIVA
+                            
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                                BASICO
+                            
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            
+                                MÉDIO
+                           
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            
+                                ALTO
+                            
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           
+                                AVANÇADO
+                            
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <label>VOLTADO AO NEGÓCIO </label><a>
+                                <input maxlength="500" style="margin: 0 30px;" id="text1" placeholder="Descreva Meta Atual" name="text1" value="" type="text" asp-for="Obs_Estrategico_01" />
+                                <input maxlength="500" id="text2" placeholder="Descreva Meta Futura" name="text2" value="" type="text" asp-for="Meta_futura_1" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="8,333333333" type="radio" asp-for="Nivel_Estrategico_01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="16,66666667" type="radio" asp-for="Nivel_Estrategico_01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="25" type="radio" asp-for="Nivel_Estrategico_01" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Checkbox1" value="33,33333333" type="radio" asp-for="Nivel_Estrategico_01" />
+                        </td>
+                    </tr>
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela2" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            META DO SETOR 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             BASICO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             MÉDIO
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            ALTO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             AVANÇADO
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <label>
+                                VOLTADO AO PROCESSO
+                            </label><a>
+                                <input maxlength="500" id="text3" style="margin: 0 30px;" placeholder="Descreva Meta" name="text3" value="" type="text" asp-for="Obs_Estrategico_02" />
+                                <input maxlength="500" id="text4" placeholder="Descreva Meta Futura" name="text4" value="" type="text" asp-for="Meta_futura_2" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="8,333333333" type="radio" asp-for="Nivel_Estrategico_02" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="16,66666667" type="radio" asp-for="Nivel_Estrategico_02" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="25" type="radio" asp-for="Nivel_Estrategico_02" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox2" name="Checkbox2" value="33,33333333" type="radio" asp-for="Nivel_Estrategico_02" />
+                        </td>
+                    </tr>
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela03" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            META INDIVIDUAL
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              BÁSICO
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            MÉDIO
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           ALTO 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             AVANÇADO 
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <label>
+                                VOLTADO AO COMPORTAMENTO OU <br>DESENVOLVIMENTO PESSOAL
+                            </label><a>
+                                <input maxlength="500" style="margin: 0 30px;" id="text5" placeholder="Descreva Meta Atual" name="text5" value="" type="text" asp-for="Obs_Estrategico_03" />
+                                <input maxlength="500" id="text6" placeholder="Descreva Meta Futura" name="text6" value="" type="text" asp-for="Meta_futura_3" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox3" name="Checkbox3" value="8,333333333" type="radio" asp-for="Nivel_Estrategico_03" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox4" name="Checkbox4" value="16,66666667" type="radio" asp-for="Nivel_Estrategico_03" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox5" name="Checkbox5" value="25" type="radio" asp-for="Nivel_Estrategico_03" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox6" name="Checkbox6" value="33,33333333" type="radio" asp-for="Nivel_Estrategico_03" />
+                        </td>
+                    </tr>
+            </table>
+            <br>
+        </div>
+        <button type="submit" class="btn btn-success" disabled>Finalizar Avaliação</button>
+    </form>
+    @section Scripts {
+        <script>
+            $(document).ready(function () {
+                $("#Checkbox3").click(function () {
+                    // habilita o campo
+                    $("button").prop("disabled", false);
+                });
+            });
+            $(document).ready(function () {
+                $("#Checkbox4").click(function () {
+                    // habilita o campo
+                    $("button").prop("disabled", false);
+                });
+            });
+            $(document).ready(function () {
+                $("#Checkbox5").click(function () {
+                    // habilita o campo
+                    $("button").prop("disabled", false);
+                });
+            });
+            $(document).ready(function () {
+                $("#Checkbox6").click(function () {
+                    // habilita o campo
+                    $("button").prop("disabled", false);
+                });
+            });
+        </script>
+    </body>
+</html>
+    }
+
+
+
+
+
+
+

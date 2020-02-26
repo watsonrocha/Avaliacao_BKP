@@ -1,0 +1,520 @@
+﻿@model AvaliacaoProcessoModel
+@using Microsoft.AspNetCore.Http;
+@inject IHttpContextAccessor HttpContextAccessor
+@{
+    ViewData["Title"] = "Sistema de Avaliação";
+}
+
+<h5><b style="font-size:20px">Bem Vindo a Avaliação de Processos !</b><br> <b style="font-size:15px"> Você está avaliando o colaborador :</b> <b style="color:red"> @HttpContextAccessor.HttpContext.Session.GetString("NomeUsuarioColaborador")</b></h5>
+
+<html lang="en" id="teste">
+
+<body>
+    <form asp-controller="AvaliacaoProcessos" asp-action="UpdateSenhaUpdate">
+        <div>
+            <table id="minhaTabela" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           Planejamento
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Capacidade para planejar e organizar as atividades, nas diferentes fases de evolução de uma tarefa, determinando objetivos, procedimentos, prioridades, prazos e utilização adequada de recursos para o atingimento das metas e resultados.
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+
+
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos08" value="0,588235294" type="radio" asp-for="Processos08" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             1 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            BÁSICO 
+                        </td>
+
+
+                        <td style="text-align:center;background:white">
+                             Revela dificuldade com a organização em geral, tem consicência da importância de se planejar e cumprir com os prazos estabelecidos, porém apresenta dificuldade na gestão do tempo, o que impacta no cumprimento das atividades.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos08" value="1,470588235" type="radio" asp-for="Processos08" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             2 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            MÉDIO 
+                        </td>
+
+                        <td style="text-align:center;background:white">
+                               Planeja e determina as ações antecipadamente com objetivos claros e definidos. Atua com organização, delega as atividades, porém falta percepção do que é prioridade.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos08" value="2,941176471" type="radio" asp-for="Processos08" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             3 
+                        </td>
+                        <td style="text-align:center;background:white">
+                             ALTO 
+                        </td>
+                        <td style="text-align:center;background:white">
+                             Apresenta facilidade para definir métodos e processos organizados para alcançar os objetivos do negócio. Auxilia a equipe de forma efetiva a realizar o que foi planejado oferecendo suporte e recursos para o desenvolvimento das atividades.
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:center;background:white">
+                            <input id="Checkbox1" name="Processos08" value="4,117647059" type="radio" asp-for="Processos08" />
+                        </td>
+                        <td style="text-align:center;background:white">
+                             4 
+                        </td>
+                        <td style="text-align:center;background:white">
+                            AVANÇADO
+                        </td>
+
+                        <td style="text-align:center;background:white">
+                             Apresenta conhecimento do negócio, avalia às novas tendências de mercado, tem visão crítica para a construção do planejamento, considerando as prioridades, objetivos, procedimentos e recursos para o cumprimento dos prazos estabelecidos.
+                        </td>
+                    </tr>
+
+
+
+
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela2" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Melhoria Continua
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Capacidade de entender os processos internos e melhorar continuamente, considerando o ganho de produtividade, redução de custos e excelencia nos processos, aplicando PDCA e KAIZEN.
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox2" name="Processos09" value="0,588235294" type="radio" asp-for="Processos09" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                   BÁSICO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                    Conhece a metodologia PDCA e KAIZEN, mas ainda não realizou recomendações e melhorias, fase de aprendizado.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox2" name="Processos09" value="1,470588235" type="radio" asp-for="Processos09" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      2
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     MÉDIO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                   Aplicou com certa dificuldade a metodologia PDCA e KAIZEN em suas atividades. Necessitou de ajuda de pares e/ou superiores para a realização de análises quanto a resultados e/ou processos da área e para o desenvolvimento de ações.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox2" name="Processos09" value="2,941176471" type="radio" asp-for="Processos09" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      ALTO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Aplicou com eficácia as ferramentas PDCA e KAIZEN, buscando constante melhoria nos processos internos, resultando na redução dos custos e na otimização dos processos. Busca agir de forma ativa, com idéias inovadoras para acelerar o crescimento da empresa.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox2" name="Processos09" value="4,117647059" type="radio" asp-for="Processos09" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     4 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      AVANÇADO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Foi capaz de multiplicar o conhecimento para a utilização das ferramentas de PDCA e KAIZEN. Buscou implementar ações simples e criativas, com ganhos significativos de produtividade e/ou excelencia em processos.
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela03" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Solução de Problemas
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Não se conformar com os problemas e buscar soluções. Utilizar ferramentas de análise PDCA para a identificação e tratativas, considerando os riscos envolvidos e o impacto sobre resultados e pessoas.
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox3" name="Processos10" value="0,588235294" type="radio" asp-for="Processos10" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                    BÁSICO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                  Demonstrou pouca iniciativa e persistencia para buscar soluções. Conhece a metodologia PDCA, porém sem aplicabilidade.
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox3" name="Processos10" value="1,470588235" type="radio" asp-for="Processos10" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     2 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      MÉDIO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                    Aplicou com certa dificuldade a ferramenta PDCA, porém demonstrou iniciativa e persistencia na busca por soluções. Precisou de ajuda de pares e/ou superiores para identificar os riscos e os impactos.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox3" name="Processos10" value="2,941176471" type="radio" asp-for="Processos10" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     ALTO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                      Utilizou a ferramenta PDCA, solucionando de forma clara e objetiva os problemas existentes, antes mesmo que o resultado fosse afetado.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox3" name="Processos10" value="4,117647059" type="radio" asp-for="Processos10" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      4 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                  AVANÇADO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                    Preocupa-se em investigar a causa raiz da situação problema, através da ferramenta PDCA. Assume as responsabilidades e define as ações a serem tomadas para a solução de problemas como um todo. Apresenta soluções viáveis, baseadas em análises e visão crítica.
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela06" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                           Inovação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Mantém-se antenado as tendências de mercado, esforçando-se para implementar novas ideias, processos e tecnologias.
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Processos11" value="0,588235294" type="radio" asp-for="Processos11" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     BÁSICO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Apresentou poucas novas ideias nos processos estabelecidos, sem ganhos consideráveis para a empresa.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Processos11" value="1,470588235" type="radio" asp-for="Processos11" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                       2 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      MÉDIO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                   Mantém-se estimulado a buscar novas ideias e as implementa de forma pontual, obtendo exito.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Processos11" value="2,941176471" type="radio" asp-for="Processos11" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      ALTO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                    Desenvolveu e implementou soluções inovadoras para problemas conhecidos e processos, favorecendo a performance do departamento.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox4" name="Processos11" value="4,117647059" type="radio" asp-for="Processos11" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     4 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                    AVANÇADO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                    Desenvolveu e implementou novas tecnologia, serviços e/ou processos que contribuíram para o ganho de eficiencia, trazendo vantagem competitiva para a empresa.
+                                </td>
+                            </tr>
+
+
+
+                        }
+
+                    }
+            </table>
+            <br>
+        </div>
+        <div>
+            <table id="minhaTabela07" class="table-hover alert-info bg-primary" style="width:100%;background:#e3efee;border-color:blue" align="center" border="1" bgcolor="#CCC">
+                <thead>
+                    <tr>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Pontuação
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                            Visão de Negocio
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                              Nivel 
+                        </td>
+                        <td style="background:#4489f6;text-align:center;color:white">
+                             Conhece de forma sistemica os negócios da empresa. Estabelece estratégias, metas, prioridades e cumpre de acordo com o planejado. Elabora planos de ação e  cronogramas, acompanhando as etapas e fazendo acontecer.
+                        </td>
+
+                    </tr>
+
+                </thead>
+                <tbody>
+
+                    @{
+
+                        {
+
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox50" name="Processos12" value="0,588235294" type="radio" asp-for="Processos12" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     1 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     BÁSICO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Apresentou dificuldades na análise de cenários internos e externos, afetando a definição de planos de ação. Entregou resultados pouco eficazes, necessitando de ajuda para tal.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox51" name="Processos12" value="1,470588235" type="radio" asp-for="Processos12" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     2 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      MÉDIO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Definiu estratégias de maneira pontual, implementou ações definidas em cronogramas, dentro dos prazos estabelecidos e acompanhou os resultados.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox52" name="Processos12" value="2,941176471" type="radio" asp-for="Processos12" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     3 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      ALTO 
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                     Identificou prioridades, mediante a análise de diferentes cenários. Definiu e implementou planos de ação preventivos e corretivos, monitorou cada etapa do processo, apoiando os envolvidos.
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="text-align:center;background:white">
+                                    <input id="Checkbox53" name="Processos12" value="4,117647059" type="radio" asp-for="Processos12" />
+                                </td>
+                                <td style="text-align:center;background:white">
+                                      4 
+                                </td>
+                                <td style="text-align:center;background:white">
+                                     AVANÇADO
+                                </td>
+
+                                <td style="text-align:center;background:white">
+                                      Apresentou organização e precisão na entrega das atividades. Agiu de forma antecipada, apresentando soluções antes que o problema pudesse ocorrer. Obteve excelentes resultados nas ações de melhorias implementadas, por meio de estratégias bem definidas.
+                                </td>
+                            </tr>
+
+                        }
+
+                    }
+            </table>
+            <br>
+    </form>
+</body>
+<button type="submit" class="btn btn-success" disabled>Finalizar Avaliação</button>
+
+</html>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $("#Checkbox50").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+        });
+          $(document).ready(function () {
+            $("#Checkbox51").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox52").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+          });
+          $(document).ready(function () {
+            $("#Checkbox53").click(function () {
+                // habilita o campo
+                $("button").prop("disabled", false);
+
+            });
+        });
+
+    </script>
+}
+
